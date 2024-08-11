@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+}
+li,a {
+    text-decoration: none;
+    list-style: none;
+}
+header{
+    display: flex; /*creating flexbox for nice arrangement*/
+    flex-direction: row;
+    justify-content: space-between; /*Horizontally alignment*/
+    align-items: center; /*Vertically alignment*/
+    padding: 30px 60px;
+    background-color: antiquewhite;
+}
+.logo{
+    font-size: 25px;
+}
+ul li{
+    display: inline-block; /*so that it can be arranged horizontally*/
+    width: 100px; /* I wanted to keep every li tag width same. It will make beautiful appearence*/
+    line-height: 30px; /*use line height for autometically centering text*/
+    margin: 0 2px;
+}
+ul li a{
+    background-color: aqua;
+    display: block; /*I wanted to use link-width and height will be same as li width-height autometically*/
+    text-align: center;
+    border-radius: 2px;
+    transition: all 0.80s ease; /*transition of this on hover*/
+}
+ul li a:hover{
+    background-color: blueviolet;
+    color: aliceblue;
+}
+.btn{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    background-color: blueviolet;
+    border: 1px solid blueviolet; /*border in same color for hover effect*/
+    color: aliceblue;
+    padding: 5px 10px;
+    border-radius: 2px;
+    transition:all 1s ease;
+}
+.btn:hover{
+    background-color: aliceblue;
+    color: black;
+}
+nav.second-nav{
+    margin-right: auto; /*you can use margin-left-right to arrange nav as you want*/
+    margin-left: 20px;
+}
+input{
+    width: 25em;
+    line-height: 35px;
+    padding: 0 10px;
+    outline: 0;
+    border: 0;
+}
+button{
+    height: 35px;
+    border: none;
+    background-color: blueviolet;
+    padding: 0 10px;
+    color: aliceblue;
+    border-radius: 0 2px 2px 0;
+    margin-left: -10px;
+    cursor: pointer;
+}
+.fourth-ul{
+    background-color: aquamarine;
+    position: absolute; /*If it is not set to position absolute header div will get expanded*/
+    display: none;
+}
+.fourth-ul li{
+    display: block;
+    margin: 0;
+    border-style: solid;
+    border-width: 0.5px 0 0 0;
+    border-color: aliceblue;
+}
+ul li:hover .fourth-ul{
+    display: block;
+}
+p{
+    background-color: rgb(255,255,255);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/*Responsiveness*/
+@media  screen and (max-width:768px){
+    header{
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .logo,nav,div{
+        padding: 10px 0;
+    }
+    .second-header{
+        display: none;
+    }
+    p.style-2{
+        display: none;
+    }
+}
+@media screen and (max-width:425px) {
+    header ul li{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+    input,button{
+        display: none;
+    }
+}
